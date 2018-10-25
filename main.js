@@ -19,7 +19,7 @@ Vue.component('input-message', {
             }
         },
 
-				sendMessage (content,name) {
+				sendMessage (name,content) {
             this.messages.push({
                 message: content,
 								name: name//,
@@ -36,7 +36,7 @@ Vue.component('input-message', {
 					 return date.getHours() + ':' + date.getMinutes();
 			 }
 	 },
-  template: '<div class="chat"><ul class="messages"> <li v-for="item in messages"><span class="name">{{ item.name }}</span> {{ item.message }} </li></ul><input class="name" type="text" v-model="myname"><br><textarea cols="50" rows="4" v-model="content" v-on:keyup="onKeyup"></textarea><button v-on:click="sendMessage(myname,content);">Отправить</button></div>'
+  template: '<div class="chat"><ul class="messages"> <li v-for="item in messages"><span class="name">{{ item.name }}</span> {{ item.message }} </li></ul><br>Enter your name <input class="name" type="text" v-model="myname" placeholder="Name"><br><textarea cols="50" rows="2" v-model="content" v-on:keyup="onKeyup" placeholder="Message"></textarea><button v-on:click="sendMessage(myname,content);">Отправить</button></div>'
 }// {{ item.date }}
 );
 
@@ -45,9 +45,4 @@ new Vue ({
 	data: {
 		title: "Hello World!"
 	}
-	// },
-  // components: {
-  //   'chat-messages': chat-messages,
-	// 	'input-message': input-message
-  // }
 });
