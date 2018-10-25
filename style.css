@@ -1,0 +1,15 @@
+.chat{
+width: 980px;
+float:none;
+}
+.chat .messages{
+list-style: none;
+padding-left: 0;
+}
+.chat .messages li{
+
+
+}
+.chat .messages li .name{
+font-weight: bold;
+}
